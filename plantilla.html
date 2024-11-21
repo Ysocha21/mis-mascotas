@@ -1,0 +1,160 @@
+<?php 
+    require_once 'includes/ti.php';
+    require_once 'modelo/class_users.php';
+    require_once 'modelo/class_residencial.php';
+    require_once 'modelo/class_restaurante.php';
+    require_once 'modelo/class_mascota.php';
+    require_once 'modelo/class_categoria.php';
+    require_once 'modelo/class_producto.php';
+    require_once 'modelo/class_tipomascota.php';
+    require_once 'modelo/class_proveedor.php';
+    require_once 'modelo/class_veterinario.php';
+    require_once 'modelo/class_servicio.php';
+    require_once 'modelo/class_historial.php';
+
+?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MASCOTAS</title>
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://localhost/MiSMASCOTAS/css/style.css">
+</head>
+
+
+<body>    
+    <div class="wrapper">
+        
+        <aside id="sidebar">
+            <div class="d-flex">
+                <button class="toggle-btn" type="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5.52 19c.64-2.2 1.84-3 3.22-3h6.52c1.38 0 2.58.8 3.22 3"/><circle cx="12" cy="10" r="3"/><circle cx="12" cy="12" r="10"/></svg>
+                </button>
+                <div class="sidebar-logo">
+                    <a href="index.php">MISMASCOTAS</a>
+                </div>
+            </div>
+            <ul class="sidebar-nav">
+                <!-- item menu -->
+                <li class="sidebar-item">
+                    <a href="http://localhost/MiSMASCOTAS/index.php" class="sidebar-link">
+                        <i class="lni lni-home"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <!-- item menu -->
+                <li class="sidebar-item">
+                    <a href="http://localhost/MiSMASCOTAS/Pag/Productos/lista.php" class="sidebar-link">
+                        <i class="lni lni-user"></i>
+                        <span>Productos</span>
+                    </a>
+                </li> 
+                <li class="sidebar-item">
+                    <a href="http://localhost/MiSMASCOTAS/Pag/Categorias/lista.php" class="sidebar-link">
+                        <i class="lni lni-user"></i>
+                        <span>Categorias</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="http://localhost/MiSMASCOTAS/Pag/Clientes/lista.php" class="sidebar-link">
+                        <i class="lni lni-user"></i>
+                        <span>Clientes</span>
+                    </a>
+                </li>   
+                <li class="sidebar-item">
+                    <a href="http://localhost/MiSMASCOTAS/Pag/Proveedores/lista.php" class="sidebar-link">
+                        <i class="lni lni-user"></i>
+                        <span>Proveedores</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="http://localhost/MiSMASCOTAS/Pag/Veterinario/lista.php" class="sidebar-link">
+                        <i class="lni lni-user"></i>
+                        <span>Veterinario</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item">
+                    <a href="http://localhost/MiSMASCOTAS/Pag/Mascotas/lista.php" class="sidebar-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="Pets-Allowed--Streamline-Guidance-Free" height="24" width="24"><desc>Pets Allowed Streamline Icon: https://streamlinehq.com</desc><path stroke="#000000" d="m16 22 0 -14.5 1 0A2.5 2.5 0 0 0 19.5 5V3.5H14A2.5 2.5 0 0 1 11.5 1v3.894a6.737 6.737 0 0 1 -3 5.606 6.737 6.737 0 0 0 -3 5.606V21.5H5A2.5 2.5 0 0 1 2.5 19v-4m5.5 0.5h2.5v0.5c0 1.5 0 2.5 0.75 4 0 0 0.75 1.5 1.75 1.5" stroke-width="1"></path></svg>
+                        <span>Mascotas</span>
+                    </a>
+                </li>  
+
+                <!-- <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="collapse" href="#driver" aria-expanded="false" aria-controls="driver">
+                      <i class=" menu-icon mdi mdi-account-multiple"></i>
+                      <span class="menu-title">Driver</span>
+                      <i class="menu-arrow"></i>
+                    </a>
+                    <div class="collapse" id="driver">
+                      <ul class="nav flex-column sub-menu">
+                        <li class="nav-item"> <a class="nav-link" href="driver_lista.php">Listado</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="driver_nuevo.php">Nuevo</a></li>
+                      </ul>
+                    </div>
+                  </li> -->
+
+                <li class="sidebar-item">
+                    <a href="restaurante_lista.php" class="sidebar-link">
+                        <i class="lni lni-user"></i>
+                        <span>Citas</span>
+                    </a>
+                </li>              
+                
+            </ul>
+            <div class="sidebar-footer">
+                <a href="#" class="sidebar-link">
+                    <i class="lni lni-exit"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+        <div class="main p-3">
+
+            <header class="p-3 mb-3 border-bottom">
+                <div class="container">
+                    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                    <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+                        <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+                    </a>
+
+                    <div class="dropdown text-end">
+                        <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+                        </a>
+                        <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+                        <li><a class="dropdown-item" href="#">Sign out</a></li>
+                        </ul>
+                    </div>
+                    </div>
+                </div>
+            </header>                        
+            <div class="container">                            
+                <?php startblock('article') ?>
+                <?php endblock() ?>
+            </div>
+        </div>   
+        
+    </div>
+    <footer class="bg-body-tertiary text-center text-lg-start" style="display: none;">
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2024 Copyright:
+            <a class="text-body" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+    <script src="http://localhost/MiSMASCOTAS/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+</html>
