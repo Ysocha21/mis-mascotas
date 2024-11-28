@@ -1,5 +1,6 @@
 <?php 
 	require_once($_SERVER['DOCUMENT_ROOT'].'/MiSMASCOTAS/plantilla.html');
+    echo ($_SERVER['DOCUMENT_ROOT'].'/MiSMASCOTAS/plantilla.html');
     $proveedor =  new proveedor();
     $lista =  $proveedor->listar_proveedor();
 ?>
@@ -19,7 +20,7 @@
 
 <div class="row">
     <div class="col-md-10">
-        <h1>LISTA DE PROVEEDORES</h1>
+        <h1>LISTA DE PROVEEDORES <span class="text-primary"> #<?php echo count($lista)?> </span></h1>
     </div>   
     <div class="col-md-2">
         <a href="residencial_nuevo.php" class="btn btn-info btn-sm col-12">Nuevo</a>

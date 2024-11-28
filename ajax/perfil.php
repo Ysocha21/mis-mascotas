@@ -1,8 +1,7 @@
-<? php 
-    require_once 'modelo/class_residencial.php';
-    $consultar= new residencial();
-    $total = $consultar->listar_residencial();
-
-var_dump($_POST);
-
-?>
+<?php
+    sleep(1);
+    require_once '../includes/class_users.php';
+    $ID = $_POST['id'];
+    $consultar = new users();
+    $driver = $consultar->detalle_user($ID);
+    var_dump($driver);

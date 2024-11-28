@@ -1,5 +1,6 @@
 <?php 
 	require_once($_SERVER['DOCUMENT_ROOT'].'/MiSMASCOTAS/plantilla.html');
+    echo ($_SERVER['DOCUMENT_ROOT'].'/MiSMASCOTAS/plantilla.html');
     $historial =  new historial();
     $lista =  $historial->listar_historial();
 ?>
@@ -19,7 +20,7 @@
 
 <div class="row">
     <div class="col-md-10">
-        <h1>LISTA DE HISTORIAL CLINICO</h1>
+        <h1>LISTA DE HISTORIAL CLINICO <span class="text-primary"> #<?php echo count($lista)?> </span></h1>
     </div>   
     <div class="col-md-2">
         <a href="residencial_nuevo.php" class="btn btn-info btn-sm col-12">Nuevo</a>

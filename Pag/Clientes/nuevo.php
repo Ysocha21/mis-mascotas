@@ -8,11 +8,11 @@
 
 <div class="row">
     <div class="col-md-12">
-        <h1>Categoria</h1>
+        <h1>Cliente</h1>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb p-3 bg-body-tertiary rounded-3">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Categorias</li>
+                <li class="breadcrumb-item active" aria-current="page">Clientes</li>
             </ol>
         </nav>   
     </div>
@@ -22,12 +22,12 @@
     <div class="col-md-10">
         <div class="card">
             <div class="card-body">
-                <form id="formNuevo" method="post" action="http://localhost/MiSMASCOTAS/controlador/control_categoria.php">
+                <form id="formNuevo" method="post" action="http://localhost/MiSMASCOTAS/controlador/control_cliente.php">
                     <input type="hidden" name="caso" value="1">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="mb-3">
-                                <h5 class="text-muted">Formulario Crear Categoria:</h5>
+                                <h5 class="text-muted">Formulario Crear Cliente:</h5>
                             </div>
                         </div>
                     </div>
@@ -41,14 +41,38 @@
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
-                                <label for="inputDescripcion">Descripcion:</label>
-                                <input id="inputDescripcion" class="form-control" type="text" name="descripcion">
+                                <label for="inputApellido">Apellido:</label>
+                                <input id="inputApellido" class="form-control" type="text" name="apellido">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="inputDNI">DNI:</label>
+                                <input id="inputDNI" class="form-control" type="text" name="dni">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="inputCorreo">Correo:</label>
+                                <input id="inputCorreo" class="form-control" type="text" name="correo">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="inputTelefono">Telefono:</label>
+                                <input id="inputTelefono" class="form-control" type="text" name="telefono">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="inputDireccion">Direccion:</label>
+                                <input id="inputDireccion" class="form-control" type="text" name="direccion">
                             </div>
                         </div>                                  
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <a class="btn btn-warning btn-sm" href="http://localhost/MiSMASCOTAS/Pag/Categorias/lista.php">Cancelar</a>
+                            <a class="btn btn-warning btn-sm" href="http://localhost/MiSMASCOTAS/Pag/Clientes/lista.php">Cancelar</a>
                             <button class="btn btn-info btn-sm" type="submit">Guardar</button>
                         </div>
                     </div>

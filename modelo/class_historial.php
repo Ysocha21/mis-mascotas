@@ -41,6 +41,15 @@ class historial extends conectarDB{
 		return $result;
 	}	
 
+	public function eliminar_historial($id){
+		$query_delete="delete from historial_clinico where id_historial = :id";
+        $eliminar=$this->conn_db->prepare($query_delete);        
+        $eliminar->bindParam(':id', $id);            
+        $eliminar->execute();
+        $result = true;            
+        return $result;
+    }
+
 	public function detalle_historial($id){
 		$sql="select * from historial_clinico where id_historial = :id";
 		$sentencia = $this->conn_db->prepare($sql);			

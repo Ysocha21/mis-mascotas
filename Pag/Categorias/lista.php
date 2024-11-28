@@ -20,7 +20,7 @@
 
 <div class="row">
     <div class="col-md-10">
-        <h1>LISTA DE CATEGORIAS</h1>
+        <h1>LISTA DE CATEGORIAS <span class="text-primary"> #<?php echo count($lista)?> </span></h1>
     </div>   
     <div class="col-md-2">
         <a href="http://localhost/MiSMASCOTAS/Pag/Categorias/nuevo.php" class="btn btn-info btn-sm col-12">Nuevo</a>
@@ -51,6 +51,7 @@
                                 <td><?php echo $fila['nombre']?></td>
                                 <td><?php echo $fila['descripcion']?></td>
                                 <td><a href="http://localhost/MiSMASCOTAS/Pag/Categorias/detalle.php?ID=<?php echo $fila['id_categoria']?>" class="btn btn-sm btn-info">Detalles</a></td>
+                                <td><a href="http://localhost/MiSMASCOTAS/Pag/Categorias/detalle.php?ID=<?php echo $fila['id_categoria']?>" class="btn btn-sm btn-info">Eliminar</a></td>
                             </tr>
                         <?php  } ?>
                     </tbody>

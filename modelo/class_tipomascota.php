@@ -35,6 +35,15 @@ class tipomascota extends conectarDB{
 		return $result;
 	}	
 
+	public function eliminar_tipomascota($id){
+		$query_delete="delete from tipo_mascota where id_tipom = :id";
+        $eliminar=$this->conn_db->prepare($query_delete);        
+        $eliminar->bindParam(':id', $id);                                     
+        $eliminar->execute();
+        $result = true;                
+        return $result;
+    }
+
 	public function detalle_tipomascota($id){
 		$sql="select * from tipo_mascota where id_tipom = :id";
 		$sentencia = $this->conn_db->prepare($sql);			

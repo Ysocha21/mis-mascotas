@@ -38,6 +38,15 @@ class servicio extends conectarDB{
 		return $result;
 	}	
 
+	public function eliminar_servicio($id){
+		$query_delete="delete from servicios where id_servicio = :id";
+        $eliminar=$this->conn_db->prepare($query_delete);        
+        $eliminar->bindParam(':id', $id);            
+        $eliminar->execute();            
+        $result =true;            
+        return $result;
+    }
+
 	public function detalle_servicio($id){
 		$sql="select * from servicios where id_servicio = :id";
 		$sentencia = $this->conn_db->prepare($sql);			

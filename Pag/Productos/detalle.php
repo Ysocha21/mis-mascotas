@@ -1,5 +1,6 @@
 <?php 
-	include 'plantilla.html'; 
+	require_once($_SERVER['DOCUMENT_ROOT'].'/MiSMASCOTAS/plantilla.html');
+    echo ($_SERVER['DOCUMENT_ROOT'].'/MiSMASCOTAS/plantilla.html'); 
     $id = $_GET['ID'];
     $categoria =  new mascota();
     $datos =  $categoria->detalle_mascota($id);
@@ -12,7 +13,7 @@
         <h1>Categoria</h1>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb p-3 bg-body-tertiary rounded-3">
-                <li class="breadcrumb-item"><a href="#">Venturi</a></li>
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Categorias</li>
             </ol>
         </nav>   

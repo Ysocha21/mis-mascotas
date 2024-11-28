@@ -2,19 +2,19 @@
 	require_once($_SERVER['DOCUMENT_ROOT'].'/MiSMASCOTAS/plantilla.html');
     echo ($_SERVER['DOCUMENT_ROOT'].'/MiSMASCOTAS/plantilla.html');
     $id = $_GET['ID'];
-    $veterinario =  new veterinario();
-    $datos =  $veterinario->detalle_veterinario($id);
+    $cliente =  new cliente();
+    $datos =  $cliente->detalle_cliente($id);
 ?>
 <?php startblock('article') ?>
 
 
 <div class="row">
     <div class="col-md-12">
-        <h1>Veterinario</h1>
+        <h1>Cliente</h1>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb p-3 bg-body-tertiary rounded-3">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Veterinarios</li>
+                <li class="breadcrumb-item active" aria-current="page">Clientes</li>
             </ol>
         </nav>   
     </div>
@@ -24,13 +24,13 @@
     <div class="col-md-10">
         <div class="card">
             <div class="card-body">
-                <form id="form_editar" method="post" action="http://localhost/MiSMASCOTAS/controlador/control_veterinario.php">
-                    <input type="hidden" name="id" value="<?php echo $datos['id_vet']?>">
+                <form id="form_editar" method="post" action="http://localhost/MiSMASCOTAS/controlador/control_cliente.php">
+                    <input type="hidden" name="id" value="<?php echo $datos['id_cliente']?>">
                     <input type="hidden" name="caso" value="2">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="mb-3">
-                                <h5 class="text-muted">Formulario Editar Veterinario:</h5>
+                                <h5 class="text-muted">Formulario Editar Cliente:</h5>
                             </div>
                         </div>
                     </div>
@@ -44,14 +44,14 @@
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
-                                <label>Especialidad:</label>
-                                <input class="form-control" type="text" name="especialidad" value="<?php echo $datos['especialidad']?>">
+                                <label>Apellido:</label>
+                                <input class="form-control" type="text" name="apellido" value="<?php echo $datos['apellido']?>">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
-                                <label>Telefono:</label>
-                                <input class="form-control" type="text" name="telefono" value="<?php echo $datos['telefono']?>">
+                                <label>DNI:</label>
+                                <input class="form-control" type="text" name="dni " value="<?php echo $datos['dni']?>">
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -62,6 +62,13 @@
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
+                                <label>Telefono:</label>
+                                <input class="form-control" type="text" name="telefono" value="<?php echo $datos['telefono']?>">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
                                 <label>Direccion:</label>
                                 <input class="form-control" type="text" name="direccion" value="<?php echo $datos['direccion']?>">
                             </div>
@@ -69,12 +76,12 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <a class="btn btn-warning btn-sm" href="ttp://localhost/MiSMASCOTAS/Pag/Veterinario/lista.php">Cancelar</a>
+                            <a class="btn btn-warning btn-sm" href="http://localhost/MiSMASCOTAS/Pag/Clientes/lista.php">Cancelar</a>
                             <button class="btn btn-info btn-sm" type="submit">Guardar</button>
                         </div>
                     </div>
                 </form>
-             </div>
+            </div>
         </div>        
     </div>
 </div>    

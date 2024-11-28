@@ -1,5 +1,6 @@
 <?php 
 	require_once($_SERVER['DOCUMENT_ROOT'].'/MiSMASCOTAS/plantilla.html');
+    echo ($_SERVER['DOCUMENT_ROOT'].'/MiSMASCOTAS/plantilla.html');
     $veterinario =  new veterinario();
     $lista =  $veterinario->listar_veterinario();
 ?>
@@ -19,10 +20,10 @@
 
 <div class="row">
     <div class="col-md-10">
-        <h1>LISTA DE VETERINARIOS</h1>
+        <h1>LISTA DE VETERINARIOS <span class="text-primary"> #<?php echo count($lista)?> </span></h1>
     </div>   
     <div class="col-md-2">
-        <a href="residencial_nuevo.php" class="btn btn-info btn-sm col-12">Nuevo</a>
+        <a href="http://localhost/MiSMASCOTAS/Pag/Veterinario/nuevo.php" class="btn btn-info btn-sm col-12">Nuevo</a>
     </div>
 </div>
 
@@ -55,7 +56,7 @@
                                 <td><?php echo $fila['telefono']?></td>
                                 <td><?php echo $fila['correo']?></td>
                                 <td><?php echo $fila['direccion']?></td>
-                                <td><a href="residencial_detalle.php?ID=<?php echo $fila['id_vet']?>" class="btn btn-sm btn-info">Detalles</a></td>
+                                <td><a href="http://localhost/MiSMASCOTAS/Pag/Veterinario/detalle.php?ID=<?php echo $fila['id_vet']?>" class="btn btn-sm btn-info">Detalles</a></td>
                             </tr>
                         <?php  } ?>
                     </tbody>

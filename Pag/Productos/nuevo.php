@@ -1,5 +1,6 @@
-<?php 
-	include 'plantilla.html'; 
+<?php  
+	require_once($_SERVER['DOCUMENT_ROOT'].'/MiSMASCOTAS/plantilla.html');
+    echo ($_SERVER['DOCUMENT_ROOT'].'/MiSMASCOTAS/plantilla.html');
     
 ?>
 <?php startblock('article') ?>

@@ -1,10 +1,11 @@
 <?php 
 	include 'plantilla.html'; 
-    $consultar = new residencial();
-    $Total = $consultar->listar_residencial();
 
-    $consult = new restaurante();
-    $Tota = $consult->listar_restaurante();
+    $consultar = new categoria();
+    $Total = $consultar->listar_categoria();
+
+    $consult = new proveedor();
+    $Tota = $consult->listar_proveedor();
 ?>
 <?php startblock('article') ?>
 

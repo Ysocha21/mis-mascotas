@@ -1,6 +1,7 @@
 <?php 
 	require_once($_SERVER['DOCUMENT_ROOT'].'/MiSMASCOTAS/plantilla.html');
     echo ($_SERVER['DOCUMENT_ROOT'].'/MiSMASCOTAS/plantilla.html');
+    $id = $_GET['ID'];
     $categoria =  new categoria();
     $datos =  $categoria->detalle_categoria($id);
 ?>
@@ -57,7 +58,7 @@
                         </div>
                     </div>
                 </form>
-             </div>
+            </div>
         </div>        
     </div>
 </div>    

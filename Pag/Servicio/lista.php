@@ -1,5 +1,6 @@
 <?php 
 	require_once($_SERVER['DOCUMENT_ROOT'].'/MiSMASCOTAS/plantilla.html');
+    echo ($_SERVER['DOCUMENT_ROOT'].'/MiSMASCOTAS/plantilla.html');
     $servicio =  new servicio();
     $lista =  $servicio->listar_servicio();
 ?>

@@ -51,6 +51,15 @@ class mascota extends conectarDB{
 		return $result;
 	}	
 
+	public function eliminar_mascota($id){
+		$query_delete="delete from mascotas where id_mascota = :id";
+        $eliminar=$this->conn_db->prepare($query_delete);        
+        $eliminar->bindParam(':id', $id);        
+        $eliminar->execute();
+		$result = true;
+		return $result;            
+    }
+
 	public function detalle_mascota($id){
 		$sql="select * from mascotas where id_mascota = :id";
 		$sentencia = $this->conn_db->prepare($sql);			

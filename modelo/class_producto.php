@@ -46,7 +46,16 @@ class producto extends conectarDB{
 		$modificar->execute();					
 		$result =true;			
 		return $result;
-	}	
+	}
+	
+	public function eliminar_producto($id){
+		$query_delete="delete from productos where id_producto = :id";
+        $eliminar=$this->conn_db->prepare($query_delete);        
+        $eliminar->bindParam(':id', $id);        
+        $eliminar->execute();                
+        $result = true;            
+        return $result;
+    }
 
 	public function detalle_producto($id){
 		$sql="select * from productos where id_producto = :id";

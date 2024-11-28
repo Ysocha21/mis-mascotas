@@ -42,6 +42,16 @@ class veterinario extends conectarDB{
 		return $result;
 	}	
 
+	public function eliminar_veterinario($id){
+		$query_delete="delete from veterinarios where id_vet = :id";
+        $eliminar=$this->conn_db->prepare($query_delete);    
+        $eliminar->bindParam(':id', $id);            
+        $eliminar->execute();                    
+        $result = true;                
+        return $result;
+    }
+
+
 	public function detalle_veterinario($id){
 		$sql="select * from veterinarios where id_vet = :id";
 		$sentencia = $this->conn_db->prepare($sql);			

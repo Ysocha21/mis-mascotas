@@ -27,7 +27,6 @@ class cliente extends conectarDB{
 		$guardar->execute();
 		$result = $this->conn_db->lastInsertId();
 		return $result;
-		//$this->conn_db=null;			
 	}
 
 	public function modificar_cliente($id,$nombre,$apellido,$dni,$correo,$telefono,$direccion){
@@ -41,11 +40,18 @@ class cliente extends conectarDB{
         $modificar->bindParam(':telefono', $telefono);
         $modificar->bindParam(':direccion', $direccion);                                       
 		$modificar->execute();					
-		$result =true;
-		$modificar->closeCursor();
-		$this->conn_db=null;				
+		$result =true;				
 		return $result;
 	}	
+
+	public function eliminar_cliente($id){
+		$query_delete="delete from clientes where id_cliente = :id";
+        $eliminar=$this->conn_db->prepare($query_delete);        
+        $eliminar->bindParam(':id', $id);        
+        $eliminar->execute();                    
+        $result = true;               
+        return $result;
+	}
 
 	public function detalle_cliente($id){
 		$sql="select * from clientes where id_cliente = :id";
@@ -53,9 +59,8 @@ class cliente extends conectarDB{
 		$sentencia->bindParam(':id', $id);		
 		$sentencia->execute();
 		$resultados = $sentencia->fetch(PDO::FETCH_ASSOC);
-		$sentencia->closeCursor();
-		$this->conn_db = null;
 		return $resultados;
 	}
+
 
 }

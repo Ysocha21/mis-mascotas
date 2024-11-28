@@ -37,6 +37,15 @@ class razamascota extends conectarDB{
 		return $result;
 	}	
 
+	public function eliminar_razamascota($id){
+		$query_delete="delete from raza_mascota where id_raza = :id";
+        $eliminar=$this->conn_db->prepare($query_delete);    
+        $eliminar->bindParam(':id', $id);        
+        $eliminar->execute();                    
+        $result =true;                
+        return $result;
+    }
+	
 	public function detalle_razamascota($id){
 		$sql="select * from raza_mascota where id_raza = :id";
 		$sentencia = $this->conn_db->prepare($sql);			

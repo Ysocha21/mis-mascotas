@@ -35,6 +35,15 @@ class categoria extends conectarDB{
 		$result =true;			
 		return $result;
 	}	
+	public function eliminar_categoria($id){
+		$query_delete="delete from categorias where id_categoria = :id";
+        $eliminar=$this->conn_db->prepare($query_delete);    
+        $eliminar->bindParam(':id', $id);            
+        $eliminar->execute();                    
+        $result = true;            
+        return $result;    
+	}
+	
 
 	public function detalle_categoria($id){
 		$sql="select * from categorias where id_categoria = :id";
